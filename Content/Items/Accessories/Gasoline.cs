@@ -9,10 +9,11 @@ namespace ximod.Content.Items.Accessories
     {
         public override void SetDefaults()
         {
-            Item.width = 30;
+            Item.width = 24;
             Item.height = 30;
 
             Item.accessory = true;
+            Item.rare = ItemRarityID.Green;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
@@ -26,7 +27,7 @@ namespace ximod.Content.Items.Accessories
                 .AddTile(TileID.Anvils)
                 .AddIngredient(ItemID.Dynamite, 1)
                 .AddIngredient(ItemID.Torch, 25)
-                .AddIngredient(ItemID.Gel, 5)
+                .AddIngredient(ItemID.Gel, 15)
                 .AddIngredient(RecipeGroupID.IronBar, 7)
                 .Register();
         }

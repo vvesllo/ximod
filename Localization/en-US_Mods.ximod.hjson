@@ -15,6 +15,14 @@ Items: {
 		DisplayName: Gasoline
 		Tooltip: ""
 	}
+
+	AncientTome: {
+		DisplayName: Ancient Tome
+		Tooltip: ""
+	}
 }
 
-Projectiles.GasolineFire.DisplayName: Gasoline Fire
+Projectiles: {
+	GasolineFire.DisplayName: Gasoline Fire
+	AncientTomeProjectile.DisplayName: Ancient Tome Projectile
+}

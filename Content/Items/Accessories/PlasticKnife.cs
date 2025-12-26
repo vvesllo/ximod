@@ -11,6 +11,7 @@ namespace ximod.Content.Items.Accessories
             Item.height = 26;
 
             Item.accessory = true;
+            Item.value = Item.buyPrice(silver: 50);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

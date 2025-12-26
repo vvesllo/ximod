@@ -1,11 +1,14 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 using Terraria.ModLoader;
+using ximod.Content.Items.Weapons.Magic;
 using ximod.Content.Projectiles.Friendly;
 
 namespace ximod.Core
 {
-    class XiModMob : GlobalNPC
+    class XiModNPC : GlobalNPC
     {
         private void GasolineFireExplosion(NPC npc, Player player, NPC.HitInfo hit)
         {
@@ -40,6 +43,23 @@ namespace ximod.Core
         public override void OnHitByProjectile(NPC npc, Projectile projectile, NPC.HitInfo hit, int damageDone)
         {
             if (npc.life < 0) OnKill(npc, Main.player[projectile.owner], hit);
+        }
+
+        public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
+        {
+            switch (npc.type)
+            {
+            case NPCID.SandSlime: 
+            case NPCID.Vulture: 
+            case NPCID.Antlion:
+                npcLoot.Add(
+                    ItemDropRule.Common(
+                        ModContent.ItemType<AncientTome>(),
+                        20
+                    )
+                );
+                break;
+            }
         }
     }
 }

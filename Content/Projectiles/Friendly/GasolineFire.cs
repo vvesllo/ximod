@@ -1,11 +1,11 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
+using ximod.Core;
 
 namespace ximod.Content.Projectiles.Friendly
 { 
-	public class GasolineFire : ModProjectile
+	public class GasolineFire : XiModProjectile
     {
         private bool isTileCollided=false;
 
@@ -39,8 +39,8 @@ namespace ximod.Content.Projectiles.Friendly
 
         public override void AI()
         {
-            Projectile.frame = (Projectile.frame + 1) % Main.projFrames[Projectile.type];
-
+            UpdateFrame(1);
+            
             if (isTileCollided)
             {
                 Projectile.velocity *= 0;
@@ -53,8 +53,8 @@ namespace ximod.Content.Projectiles.Friendly
             Projectile.rotation += (float)Projectile.velocity.Length() / 0.1f;
 
             Dust.NewDust(
-                Projectile.Center,
-                3, 3,
+                Projectile.position,
+                6, 6,
                 DustID.Flare,
                 Main.rand.NextFloat(-2f, 3f), -5f
             );
