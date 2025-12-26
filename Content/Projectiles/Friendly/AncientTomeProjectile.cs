@@ -29,7 +29,7 @@ namespace ximod.Content.Projectiles.Friendly
         public override void AI()
         {
             UpdateFrame(1);
-
+            
             int targetIndex = GetNearestEnemyIndex(200f);
             if (targetIndex < 0)
             {
@@ -53,6 +53,7 @@ namespace ximod.Content.Projectiles.Friendly
                 Projectile.Center,
                 new Vector3(0.2f, 0.2f, 0)
             );
+            
         }
     }
 }
