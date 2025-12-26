@@ -1,0 +1,3 @@
+displayName = ximod
+author = ximod-dev
+version = 0.1

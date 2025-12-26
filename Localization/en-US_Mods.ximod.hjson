@@ -1,0 +1,20 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	WildKite: {
+		Tooltip: ""
+		DisplayName: Wild Kite
+	}
+
+	PlasticKnife: {
+		DisplayName: Plastic Knife
+		Tooltip: +5pt damage
+	}
+
+	Gasoline: {
+		DisplayName: Gasoline
+		Tooltip: ""
+	}
+}
+
+Projectiles.GasolineFire.DisplayName: Gasoline Fire
